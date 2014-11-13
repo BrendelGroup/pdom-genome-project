@@ -12,31 +12,41 @@ This will run multiple jobs/threads at once to speed up computations.
 For a laptop or a desktop, this will usually be 4, 8, or 16.
 For server or HPC hardware, you mave have as many as 32 to 64 processors at your disposal.
 
-    NumThreads=16
+```bash
+NumThreads=16
+```
 
 Next, download and decompress short reads using [iRODS][].
 
-    iget -Vr /iplant/home/standage/Polistes_dominula/sequence/genome
-    ls genome/*.gz | parallel --gnu --jobs $NumThreads gunzip
+```bash
+iget -Vr /iplant/home/standage/Polistes_dominula/sequence/genome
+ls genome/*.gz | parallel --gnu --jobs $NumThreads gunzip
+```
 
 Then, count *k*-mers and produce *k*-mer frequency histograms.
 
-    FastqFiles=$(ls genome/*.fq)
-    for k in  17 21 25 29
-    do
-      jellyfish count -m $k -s 100M -t $NumThreads -C -o pdom-${k}mers.jf $FastqFiles
-      jellyfish histo pdom-${k}mers.jf > pdom-${k}mers.hist
-    done
+```bash
+FastqFiles=$(ls genome/*.fq)
+for k in  17 21 25 29
+do
+  jellyfish count -m $k -s 100M -t $NumThreads -C -o pdom-${k}mers.jf $FastqFiles
+  jellyfish histo pdom-${k}mers.jf > pdom-${k}mers.hist
+done
+```
 
 Finally, estimate *k*-mer coverage, genome coverage, and genome size.
 
-    ./size-coverage-estimate.R
+```bash
+./size-coverage-estimate.R
+```
 
-<img src="pdom-size-kmers.png" style="width: 300px; height: 300px" />
+<img src="genome-size/pdom-size-kmers.png" style="width: 300px; height: 300px" />
 
 Clean up huge data files.
 
-    rm -r genome/ *.jf
+```bash
+rm -r genome/ *.jf
+```
 
 ## References
 
