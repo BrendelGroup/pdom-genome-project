@@ -40,7 +40,7 @@ Finally, estimate *k*-mer coverage, genome coverage, and genome size.
 ./size-coverage-estimate.R
 ```
 
-<img src="genome-size/pdom-size-kmers.png" style="width: 300px; height: 300px" />
+![Genome size estimate](pdom-size-kmers.png)
 
 Clean up huge data files.
 
