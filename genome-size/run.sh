@@ -7,11 +7,12 @@ else
   NumThreads=$1
 fi
 
-iget -Vr /iplant/home/standage/Polistes_dominula/sequence/genome
-ls genome/*.gz | parallel --gnu --jobs $NumThreads gunzip
+# iget -Vr /iplant/home/standage/Polistes_dominula/sequence/genome
+# ls genome/*.gz | parallel --gnu --jobs $NumThreads gunzip
 
 FastqFiles=$(ls genome/*.fq)
-for k in  17 21 25 29
+#for k in 17 21 25 29
+for k in 29
 do
   jellyfish count -m $k -s 100M -t $NumThreads -C -o pdom-${k}mers.jf $FastqFiles
   jellyfish histo pdom-${k}mers.jf > pdom-${k}mers.hist
@@ -19,7 +20,9 @@ done
 
 ./size-coverage-estimate.R
 
-if [ ! -z "${2:-}" ]; then
+if [ -z "${2:-}" ]; then
+  rm -r genome/ *.jf
+else
   if [ "$2" != "keep" ]; then
     rm -r genome/ *.jf
   fi
