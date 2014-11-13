@@ -26,7 +26,9 @@ These resources can be browsed or downloaded at [GitHub][].
   - A `README.md` file (in Markdown format) is included for each section, which provides a prose description of what each set of commands is doing.
     This file is intended to facilitate interactive replication of results: typing or pasting the commands into the terminal and executing them manually to produce the output.
     (Note: a single PDF document containing all documentation was produced by concatenating all of the various README files into a single Markdown file and converting to PDF format.)
-  - Each section also includes a `run.sh` file (Bash code) which includes the same commands as the README file---sans commentary---and is intended to facilitate replication in batch mode.
+  - Each section also contains a `Makefile` file which includes the same commands as the README file, though without the commentary and in slightly different syntax.
+    The purpose of these files is to facilitate automated replication of each analysis in batch mode.
+    To execute this procedure for a particular analysis, simply change to that directory and execute `make` on the command line.
   - Most sections also include additional supplementary files, such as source code, graphics, or configuration files necessary for replicating the results.
     The purpose of each supplemental file should be clear from the documentation.
 

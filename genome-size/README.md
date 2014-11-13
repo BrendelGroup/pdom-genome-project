@@ -5,7 +5,7 @@ The *k*-mer coverage *C<sub>k</sub>* was determined for several values of *k*: 1
 A linear model of *C<sub>k</sub>* as a function of *k* was fit to compute the estimated nucleotide coverage *C = C<sub>1</sub>* and genome size.
 The *k*-mer histogram files have been deposited in the Pdom Data Store at `r1.2/genome-size-est/`.
 
-## Procedure
+## Procedure (interactive)
 
 First, designate the number of available processors.
 This will run multiple jobs/threads at once to speed up computations.
@@ -40,12 +40,21 @@ Finally, estimate *k*-mer coverage, genome coverage, and genome size.
 ./size-coverage-estimate.R
 ```
 
-![Genome size estimate](pdom-size-kmers.png)
+![We can estimate genome size by observing coverage *C<sub>k</sub>* for different values of *k* and interpolating to find *C<sub>1</sub>*.](pdom-size-kmers.png)
 
 Clean up huge data files.
 
 ```bash
-rm -r genome/ *.jf
+rm -r genome/*.fq *.jf
+```
+
+## Procedure (automated)
+
+The same procedure can also be run in batch mode using the following commands (in the `genome-size` directory).
+
+```bash
+make
+make clean
 ```
 
 ## References
