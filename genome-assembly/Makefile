@@ -4,13 +4,24 @@ NumThreads=1
 TrimJar=/usr/local/src/Trimmomatic-0.22/trimmomatic-0.22.jar
 DataDir=assembly/Polistes_dominula/data-trim
 
-AllFastqs=$(DataDir)/pdom-gdnaseq-200bp-trim-paired-1.fq \
-          $(DataDir)/pdom-gdnaseq-500bp-trim-paired-1.fq \
-          $(DataDir)/pdom-gdnaseq-1kb-trim-paired-1.fq \
-          $(DataDir)/pdom-gdnaseq-3kb-trim-paired-1.fq \
-          $(DataDir)/pdom-gdnaseq-8kb-trim-paired-1.fq
+RawFastqs=pdom-gdnaseq-200bp-1.fq.gz \
+          pdom-gdnaseq-200bp-2.fq.gz \
+          pdom-gdnaseq-500bp-1.fq.gz \
+          pdom-gdnaseq-500bp-2.fq.gz \
+          pdom-gdnaseq-1kb-1.fq.gz \
+          pdom-gdnaseq-1kb-2.fq.gz \
+          pdom-gdnaseq-3kb-1.fq.gz \
+          pdom-gdnaseq-3kb-2.fq.gz \
+          pdom-gdnaseq-8kb-1.fq.gz \
+          pdom-gdnaseq-8kb-2.fq.gz
 
-all:						pdom-scaffolds-unmasked-r1.2.fa.gz
+AllFastqs=$(DataDir)/pdom-gdnaseq-200bp-trim-1.fq \
+          $(DataDir)/pdom-gdnaseq-500bp-trim-1.fq \
+          $(DataDir)/pdom-gdnaseq-1kb-trim-1.fq \
+          $(DataDir)/pdom-gdnaseq-3kb-trim-1.fq \
+          $(DataDir)/pdom-gdnaseq-8kb-trim-1.fq
+
+all:						pdom-scaffolds-unmasked-r1.2.fa.gz $(RawFastqs)
 
 pdom-scaffolds-unmasked-r1.2.fa.gz:		AssemblyComplete scaff-ids.pl
 						./scaff-ids.pl PdomSCFr1.2- \
@@ -32,10 +43,10 @@ PrepComplete:					$(AllFastqs) in_libs.csv in_groups.csv
 						    PLOIDY=2
 						date > $@
 
-$(DataDir)/pdom-gdnaseq-%-trim-paired-1.fq:	pdom-gdnaseq-%-1.fq.gz pdom-gdnaseq-%-2.fq.gz
+$(DataDir)/pdom-gdnaseq-%-trim-1.fq:		pdom-gdnaseq-%-1.fq.gz pdom-gdnaseq-%-2.fq.gz
 						./run-trim.sh $* $(TrimJar) $(NumThreads)
 						mkdir -p $(DataDir)
-						pdom-gdnaseq-$*-trim-paired-*.fq $(DataDir)
+						mv pdom-gdnaseq-$*-trim-*.fq $(DataDir)
 
 pdom-gdnaseq-%.fq.gz:				
 						which iget
