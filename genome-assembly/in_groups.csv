@@ -1,6 +1,6 @@
 group_name,library_name,file_name
-PdomIllumina200bp,PdomIllumina200bp,pdom-gdnaseq-200bp-trim-*.fq
-PdomIllumina500bp,PdomIllumina500bp,pdom-gdnaseq-500bp-trim-*.fq
-PdomIllumina1kb,PdomIllumina1kb,pdom-gdnaseq-1kb-trim-*.fq
-PdomIllumina3kb,PdomIllumina3kb,pdom-gdnaseq-3kb-trim-*.fq
-PdomIllumina8kb,PdomIllumina8kb,pdom-gdnaseq-8kb-trim-*.fq
+PdomIllumina200bp,PdomIllumina200bp,/scratch/standage/pdom-genome-project/genome-assembly/assembly/Polistes_dominula/data-trim/pdom-gdnaseq-200bp-trim-*.fq
+PdomIllumina500bp,PdomIllumina500bp,/scratch/standage/pdom-genome-project/genome-assembly/assembly/Polistes_dominula/data-trim/pdom-gdnaseq-500bp-trim-*.fq
+PdomIllumina1kb,PdomIllumina1kb,/scratch/standage/pdom-genome-project/genome-assembly/assembly/Polistes_dominula/data-trim/pdom-gdnaseq-1kb-trim-*.fq
+PdomIllumina3kb,PdomIllumina3kb,/scratch/standage/pdom-genome-project/genome-assembly/assembly/Polistes_dominula/data-trim/pdom-gdnaseq-3kb-trim-*.fq
+PdomIllumina8kb,PdomIllumina8kb,/scratch/standage/pdom-genome-project/genome-assembly/assembly/Polistes_dominula/data-trim/pdom-gdnaseq-8kb-trim-*.fq

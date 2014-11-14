@@ -1,2 +1,5 @@
 assembly
 *.fq.gz
+*.fq
+PrepComplete
+AssemblyComplete
