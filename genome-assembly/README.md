@@ -39,7 +39,7 @@ First, prepare a working directory for the assembly.
 
 ```bash
 mkdir -p assembly/Polistes_dominula/data-trim
-mv pdom-gdnaseq-*-trim-paired-*.fq assembly/Polistes_dominula/data-trim/.
+mv pdom-gdnaseq-*-trim-?.fq assembly/Polistes_dominula/data-trim/.
 ```
 
 Next, convert the input files into the internal format required by AllPaths-LG.

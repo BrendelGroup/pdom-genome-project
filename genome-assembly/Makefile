@@ -46,7 +46,7 @@ PrepComplete:					$(AllFastqs) in_libs.csv in_groups.csv
 $(DataDir)/pdom-gdnaseq-%-trim-1.fq:		pdom-gdnaseq-%-1.fq.gz pdom-gdnaseq-%-2.fq.gz
 						./run-trim.sh $* $(TrimJar) $(NumThreads)
 						mkdir -p $(DataDir)
-						mv pdom-gdnaseq-$*-trim-*.fq $(DataDir)
+						mv pdom-gdnaseq-$*-trim-?.fq $(DataDir)
 
 pdom-gdnaseq-%.fq.gz:				
 						which iget
