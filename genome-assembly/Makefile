@@ -2,7 +2,8 @@
 SHELL=bash
 NumThreads=1
 TrimJar=/usr/local/src/Trimmomatic-0.22/trimmomatic-0.22.jar
-DataDir=assembly/Polistes_dominula/data-trim
+CWD=$(shell pwd)
+DataDir=$(CWD)/assembly/Polistes_dominula/data-trim
 
 RawFastqs=pdom-gdnaseq-200bp-1.fq.gz \
           pdom-gdnaseq-200bp-2.fq.gz \
@@ -29,7 +30,7 @@ pdom-scaffolds-unmasked-r1.2.fa.gz:		AssemblyComplete scaff-ids.pl
 						    > pdom-scaffolds-unmasked-r1.2.fa
 
 AssemblyComplete:				PrepComplete in_libs.csv in_groups.csv
-						RunAllPathsLG PRE=assembly \
+						RunAllPathsLG PRE=$(CWD)/assembly \
 						    REFERENCE_NAME=Polistes_dominula \
 						    DATA_SUBDIR=data-trim \
 						    RUN=run01 \
