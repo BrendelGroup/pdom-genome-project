@@ -16,7 +16,7 @@ For server or HPC hardware, you mave have as many as 32 to 64 processors at your
 NumThreads=16
 ```
 
-Next, download and decompress short reads using [iRODS][].
+Next, download short reads using [iRODS][] and decompress.
 
 ```bash
 iget -Vr /iplant/home/standage/Polistes_dominula/sequence/genome
@@ -59,13 +59,12 @@ make clean
 
 ## References
 
-- **Marçais G, Kingsford C** (2011) A fast, lock-free approach for efficient parallel counting of occurrences of k-mers. *Bioinformatics* **27**:764-70, [doi:10.1093/bioinformatics][].
+- **Marçais G, Kingsford C** (2011) A fast, lock-free approach for efficient parallel counting of occurrences of k-mers. *Bioinformatics* **27**:764-70, [doi:10.1093/bioinformatics](http://dx.doi.org/10.1093/bioinformatics).
 
-<!-- GitHub Markdown does not render FTP links correctly, thus the bit.ly link for [2]. -->
-<!-- Should be ftp://ftp.genome.umd.edu/pub/jellyfish/jellyfish-2.1.3.tar.gz            -->
+<!-- GitHub Markdown does not render FTP links correctly, thus the bit.ly link for [2.1.3]. -->
+<!-- Should be ftp://ftp.genome.umd.edu/pub/jellyfish/jellyfish-2.1.3.tar.gz                -->
 
 [Jellyfish]: http://www.genome.umd.edu/jellyfish.html
 [2.1.3]: http://bit.ly/1yCpaUQ
 [iRODS]: http://www.iplantcollaborative.org/ci/data-store
-[doi:10.1093/bioinformatics]: http://dx.doi.org/10.1093/bioinformatics
 
