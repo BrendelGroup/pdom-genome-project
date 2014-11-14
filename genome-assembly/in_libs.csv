@@ -1,0 +1,6 @@
+library_name,project_name,organism_name,type,paired,frag_size,frag_stddev,insert_size,insert_stddev,read_orientation,genomic_start,genomic_end
+PdomIllumina200bp,PdomAssemble,Polistes.dominula,fragment,1,150,25,,,inward,,
+PdomIllumina500bp,PdomAssemble,Polistes.dominula,jumping,1,,,200,50,inward,,
+PdomIllumina1kb,PdomAssemble,Polistes.dominula,jumping,1,,,900,200,inward,,
+PdomIllumina3kb,PdomAssemble,Polistes.dominula,jumping,1,,,2600,500,outward,,
+PdomIllumina8kb,PdomAssemble,Polistes.dominula,jumping,1,,,7600,750,outward,,
