@@ -53,7 +53,7 @@ rm -r genome/*.fq *.jf
 The same procedure can also be run in batch mode using the following commands (in the `genome-size` directory).
 
 ```bash
-make
+make NumThreads=16
 make clean
 ```
 

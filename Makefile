@@ -1,14 +1,12 @@
 #!/usr/bin/make -f
 SHELL=bash
 
-pdom-docs.pdf:	README.md genome-size/README.md pdom-size-kmers.png genome-assembly/README.md
+READMES=genome-size/README.md genome-assembly/README.md transcript-assembly/README.md
+
+pdom-docs.pdf:	README.md $(READMES)
 		which pandoc
-		sed -e 's|<sub>|~|g' -e 's|</sub>|~|g' README.md genome-size/README.md genome-assembly/README.md \
+		sed -e 's|<sub>|~|g' -e 's|</sub>|~|g' $^ \
+		    | grep -v '^\!\[' \
 		    | pandoc --number-sections --standalone -f markdown --no-wrap \
 		      -V geometry:margin=1in --highlight-style zenburn -o $@
 
-pdom-size-kmers.png:	genome-size/pdom-size-kmers.png
-			ln -s genome-size/pdom-size-kmers.png
-
-clean:		
-		rm -f pdom-size-kmers.png

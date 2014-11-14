@@ -75,7 +75,8 @@ rm -rf assembly pdom-gdnaseq*.fq*
 The same procedure can also be run in batch mode using the following commands (in the `genome-assembly` directory).
 
 ```bash
-make
+make NumThreads=16 \
+     TrimJar=/usr/local/src/Trimmomatic-0.22/trimmomatic-0.22.jar
 make clean
 ```
 
