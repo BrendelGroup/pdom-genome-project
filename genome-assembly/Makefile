@@ -4,6 +4,14 @@ NumThreads=1
 TrimJar=/usr/local/src/Trimmomatic-0.22/trimmomatic-0.22.jar
 DataDir=assembly/Polistes_dominula/data-trim
 
+AllFastqs=$(DataDir)/pdom-gdnaseq-200bp-trim-paired-1.fq \
+          $(DataDir)/pdom-gdnaseq-500bp-trim-paired-1.fq \
+          $(DataDir)/pdom-gdnaseq-1kb-trim-paired-1.fq \
+          $(DataDir)/pdom-gdnaseq-3kb-trim-paired-1.fq \
+          $(DataDir)/pdom-gdnaseq-8kb-trim-paired-1.fq
+
+all:						pdom-scaffolds-unmasked-r1.2.fa.gz
+
 pdom-scaffolds-unmasked-r1.2.fa.gz:		AssemblyComplete scaff-ids.pl
 						./scaff-ids.pl PdomSCFr1.2- \
 						    < $(DataDir)/run01/ASSEMBLIES/test/final.assembly.fasta \
@@ -14,7 +22,8 @@ AssemblyComplete:				PrepComplete in_libs.csv in_groups.csv
 						    REFERENCE_NAME=Polistes_dominula \
 						    DATA_SUBDIR=data-trim \
 						    RUN=run01 \
-						    TARGETS=standard
+						    TARGETS=standard \
+						    THREADS=32
 						date > $@
 
 PrepComplete:					$(AllFastqs) in_libs.csv in_groups.csv
@@ -30,7 +39,7 @@ $(DataDir)/pdom-gdnaseq-%-trim-paired-1.fq:	pdom-gdnaseq-%-1.fq.gz pdom-gdnaseq-
 
 pdom-gdnaseq-%.fq.gz:				
 						which iget
-						iget /iplant/home/standage/Polistes_dominula/sequence/genome/$@.gz
+						iget /iplant/home/standage/Polistes_dominula/sequence/genome/$@
 
 clean:						
 						rm -rf assembly pdom-gdnaseq*.fq*
