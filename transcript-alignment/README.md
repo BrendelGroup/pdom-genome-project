@@ -69,5 +69,11 @@ The same procedure can also be run in batch mode using the following commands (i
 make GSQDir=/usr/local/src/GENESEQER
 ```
 
+## References
+
+- **Brendel V, Xing L, Zhu W** (2004) Gene structure prediction from consensus spliced alignment of multiple ESTs matching the same genomic locus. *Bioinformatics*, **20**:1157-1169, [doi:10.1093/bioinformatics/bth058](http://dx.doi.org/10.1093/bioinformatics/bth058).
+- **Berens _et al_**, in preparation.
+- **Ferreira P, Patalano S, Chauhan R, Ffrench-Constant R, Gabaldon T, Guigo R, Sumner S** (2013) Transcriptome analyses of primitively eusocial wasps reveal novel insights into the evolution of sociality and the origin of alternative phenotypes. *Genome Biology*, **14**(2):R20, [doi:10.1186/gb-2013-14-2-r20](http://dx.doi.org/10.1186/gb-2013-14-2-r20).
+
 [GeneSeqer]: http://brendelgroup.org/bioinformatics2go/GeneSeqer.php
 [2-26-2014]: http://www.brendelgroup.org/bioinformatics2go/Download/GeneSeqer-2-26-2014.tar.gz

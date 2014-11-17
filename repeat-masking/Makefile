@@ -37,7 +37,7 @@ pdom.repeats.19.50.fa:			pdom.repeats.19.50.gff3 pdom-rm-masked.fa
 					    > $@
 
 pdom.repeats.19.50.gff3:		pdom.repeats.19.50.tmer
-					./tallymer2gff3.plx -k 19 -s $IDX \
+					./tallymer2gff3.plx -k 19 -s pdom-rm-masked.fa \
 					                    pdom.repeats.19.50.tmer \
 					    > $@
 
@@ -45,14 +45,14 @@ pdom.repeats.19.50.tmer:		pdom.idx.19.50
 					gt tallymer search -v \
 					            -output qseqnum qpos counts \
 					            -tyr pdom.idx.19.50 \
-					            -q $IDX \
+					            -q pdom-rm-masked.fa \
 					    > $@ 2> tallymer.search.log
 
 pdom.idx.19.50:				pdom.occratio.10.45.dump
 					gt tallymer mkindex -v \
 					            -mersize 19 \
 					            -minocc 50 \
-					            -esa $IDX \
+					            -esa pdom-rm-masked.fa \
 					            -counts -pl \
 					            -indexname $@ \
 					    > mkindex.log 2>&1
@@ -62,13 +62,13 @@ pdom.occratio.10.45.dump:		suffixerator.log
 					                     -minmersize 10 \
 					                     -maxmersize 45 \
 					                     -output unique nonunique nonuniquemulti total relative \
-					                     -esa $IDX \
+					                     -esa pdom-rm-masked.fa \
 					    > $@
 
 suffixerator.log:			pdom-rm-masked.fa
 					gt suffixerator -v \
-					                -db $IDX \
-					                -indexname $IDX \
+					                -db pdom-rm-masked.fa \
+					                -indexname pdom-rm-masked.fa \
 					                -tis -suf -lcp -des -ssp -sds -dna \
 					    > suffixerator.log 2>&1
 
