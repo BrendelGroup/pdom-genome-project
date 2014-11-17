@@ -54,6 +54,14 @@ do
 done
 ```
 
+Finally, convert the GenomeThreader alignments into GFF3 format, filtering out alignments with similarity or coverage scores < 0.5.
+
+```bash
+./gth2makergff3.py < amel-ogs-prot-masked.gth > amel-ogs-prot-masked.gff3
+./gth2makergff3.py < amel-ncbi-prot-masked.gth > amel-ncbi-prot-masked.gff3
+./gth2makergff3.py < dmel-flybase-prot-masked.gth > dmel-flybase-prot-masked.gff3
+```
+
 ## Procedure (automated)
 
 The same procedure can also be run in batch mode using the following commands (in the `protein-alignment` directory).

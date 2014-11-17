@@ -61,6 +61,14 @@ GeneSeqerL -s Arabidopsis \
            > pcan-tsa-masked-gsq.log 2>&1
 ```
 
+Lastly, convert all of the alignments into GFF3 format, filtering out alignments with GeneSeqer similarity or coverage scores < 0.8.
+
+```bash
+./gsq2makergff3.py < pdom-tsa-r1.2-masked.gsq > pdom-tsa-r1.2-masked.gff3
+./gsq2makergff3.py < pmet-tsa-r1.2-masked.gsq > pmet-tsa-r1.2-masked.gff3
+./gsq2makergff3.py < pcan-tsa-r1.2-masked.gsq > pcan-tsa-masked.gff3
+```
+
 ## Procedure (automated)
 
 The same procedure can also be run in batch mode using the following commands (in the `transcript-alignment` directory).

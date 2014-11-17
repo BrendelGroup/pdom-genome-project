@@ -8,7 +8,11 @@ GTHDATADIR=$(GTHbin)/gthdata
 export BSSMDIR := $(BSSMDIR)
 export GTHDATADIR := $(GTHDATADIR)
 
-all:						amel-ogs-prot-masked.gth amel-ncbi-prot-masked.gth dmel-flybase-prot-masked.gth
+all:						amel-ogs-prot-masked.gff3 amel-ncbi-prot-masked.gff3 dmel-flybase-prot-masked.gff3 \
+						amel-ogs-prot-masked.gth amel-ncbi-prot-masked.gth dmel-flybase-prot-masked.gth
+
+%-prot-masked.gff3:				%-prot-masked.gth
+						./gth2makergff3.py < $^ > $@
 
 %-prot-masked.gth:				pdom-scaffolds-masked-r1.2.fa %-prot.fa
 						gth -genomic pdom-scaffolds-masked-r1.2.fa \
