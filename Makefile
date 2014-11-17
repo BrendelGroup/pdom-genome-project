@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 SHELL=bash
 
-READMES=genome-size/README.md genome-assembly/README.md transcript-assembly/README.md
+READMES=genome-size/README.md genome-assembly/README.md transcript-assembly/README.md repeat-masking/README.md
 
 pdom-docs.pdf:	README.md $(READMES)
 		which pandoc
