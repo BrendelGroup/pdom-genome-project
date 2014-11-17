@@ -61,5 +61,13 @@ GeneSeqerL -s Arabidopsis \
            > pcan-tsa-masked-gsq.log 2>&1
 ```
 
+## Procedure (automated)
+
+The same procedure can also be run in batch mode using the following commands (in the `transcript-alignment` directory).
+
+```bash
+make GSQDir=/usr/local/src/GENESEQER
+```
+
 [GeneSeqer]: http://brendelgroup.org/bioinformatics2go/GeneSeqer.php
 [2-26-2014]: http://www.brendelgroup.org/bioinformatics2go/Download/GeneSeqer-2-26-2014.tar.gz

@@ -103,7 +103,7 @@ gzip pdom-scaffolds-masked-r1.2.fa
 
 ## Procedure (automated)
 
-The same procedure can also be run in batch mode using the following commands (in the genome-assembly directory).
+The same procedure can also be run in batch mode using the following commands (in the `repeat-masking` directory).
 
 ```bash
 make NumThreads=16 GCContent=30.77

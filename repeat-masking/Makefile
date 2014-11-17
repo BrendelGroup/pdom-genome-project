@@ -76,13 +76,13 @@ pdom-rm-masked.fa:			pdom-scaffolds-unmasked-r1.2.fa.masked
 					./lc2n.py < $^ > $@
 
 pdom-scaffolds-unmasked-r1.2.fa.masked:	pdom-scaffolds-unmasked-r1.2.fa
-					RepeatMasker -species insects -parallel ${NumThreads} -gc ${GCContent} \
+					RepeatMasker -species insects -parallel $(NumThreads) -gc $(GCContent) \
 					             -frag 4000000 -lcambig -xsmall -gff \
 					             pdom-scaffolds-unmasked-r1.2.fa \
 					    > rm.log 2>&1
 
 pdom-scaffolds-unmasked-r1.2.fa:		
-					iget ${PdomData}/r1.2/genome-assembly/$@.gz
+					iget $(PdomData)/r1.2/genome-assembly/$@.gz
 					gunzip $@.gz
 
 clean:					
