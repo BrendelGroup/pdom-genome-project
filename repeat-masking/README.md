@@ -12,7 +12,7 @@ First, download the unmasked genome sequence.
 
 ```bash
 PdomData=/iplant/home/standage/Polistes_dominula
-iget -V $PdomData/r1.2/genome-assembly/pdom-scaffolds-unmasked-r1.2.fa.gz
+iget ${PdomData}/r1.2/genome-assembly/pdom-scaffolds-unmasked-r1.2.fa.gz
 gunzip pdom-scaffolds-unmasked-r1.2.fa.gz
 ```
 
@@ -99,6 +99,15 @@ mask.pl pdom.repeats.19.50.gff3 \
         pdom-rm-masked.fa \
         > pdom-scaffolds-masked-r1.2.fa
 gzip pdom-scaffolds-masked-r1.2.fa
+```
+
+## Procedure (automated)
+
+The same procedure can also be run in batch mode using the following commands (in the genome-assembly directory).
+
+```bash
+make NumThreads=16 GCContent=30.77
+make clean
 ```
 
 ## References
