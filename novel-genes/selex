@@ -1,0 +1,132 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use Getopt::Long;
+
+# Copyright (c) 2013-2014, Daniel S. Standage <daniel.standage@gmail.com>
+#
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+
+# ------------------------------------------------------------------------------
+# This script is motivated by a task that comes up daily in my research. I
+# often need to use a list of values stored in one file to retrieve data from
+# another file. Loading the data into an SQL database isn't an appealing option
+# most of the time, so this script is my attempt at solving the general problem.
+# ------------------------------------------------------------------------------
+
+sub print_usage
+{
+  my $outstream = shift(@_);
+  print $outstream "
+selex: pull out needles from your tabular haystack!
+
+  Input:  a 'needles' file and a 'haystack' file. The 'haystack' file contains
+          data in tabular format. The 'needles' file contains a list of values
+          used to select data from the haystack. These values may be listed one
+          per line, or they may be provided as a column in data table, in which
+          case the user must specify which column contains the key value on
+          which to join the tables.
+  Output: entries (or specific values) from the 'haystack' file that match the
+          queries from the 'needles' file
+
+Usage: selex [options] needles haystack
+  Options:
+    -d|--delim: CHAR     delimiter for 'haystacks' file; default is tab
+    -H|--header:         treat the 1st line of the 'haystacks' file as a header
+    -h|--help            print this help message and exit
+    -k|--hkey: INT       field from the 'haystack' file that should be used to
+                         match the key from the 'needles' file; default is 0
+    -m|--ndelim: CHAR    delimiter for 'needles' file (if there are multiple
+                         values per line); default is tab
+    -n|--nkey: INT       if there are multiple values per line in the 'needles'
+                         file, this file refers to the field that should be used
+                         to match the key from the 'haystack' file; default is 0
+    -o|--out: INT        comma-separated list of fields to print from each
+                         matched haystack entry; -1 prints the entire line;
+                         default is -1
+
+";
+}
+
+# Parse command line options
+my $hdelim = "\t";
+my $header = 0;
+my $hkey   = 0;
+my $ndelim = "\t";
+my $nkey   = 0;
+my $outstr = "-1";
+GetOptions
+(
+  "d|delim=s"  => \$hdelim,
+  "h|help"     => sub { print_usage(\*STDOUT); exit(0); },
+  "H|header"   => \$header,
+  "k|hkey=i"   => \$hkey,
+  "m|ndelim=s" => \$ndelim,
+  "n|nkey=i"   => \$nkey,
+  "o|out=s"    => \$outstr,
+);
+my $needlesfile = shift(@ARGV) or do
+{
+  printf(STDERR "error: please provide 'needles' file");
+  print_usage(\*STDERR);
+  exit(1);
+};
+my $haystackfile = shift(@ARGV) or do
+{
+  printf(STDERR "error: please provide 'haystack' file");
+  print_usage(\*STDERR);
+  exit(1);
+};
+my @outfields = split(/,/, $outstr);
+
+# Load needles into an associative array (for quick lookup)
+my %needles;
+open(my $NDL, "<", $needlesfile) or die("error opening file '$needlesfile'");
+while(my $line = <$NDL>)
+{
+  chomp($line);
+  my @fields = split(/$ndelim/, $line);
+  my $needle = $fields[$nkey];
+  $needles{ $needle } = 1;
+}
+close($NDL);
+#use Data::Dumper;
+#print Dumper \%needles;
+
+# Iterate through haystack, print entries whose keys match a needle
+open(my $HAY, "<", $haystackfile) or die("error opening file '$haystackfile'");
+if($header)
+{
+  my $h = <$HAY>;
+  print $h;
+}
+while(my $line = <$HAY>)
+{
+  chomp($line);
+  my @fields = split(/$hdelim/, $line);
+  my $keyvalue = $fields[$hkey];
+  if($needles{ $keyvalue })
+  {
+    if($outstr eq "-1")
+    {
+      print $line, "\n";
+    }
+    else
+    {
+      my @values = @fields[@outfields];
+      print join("\t", @values), "\n";
+    }
+  }
+}
+close($HAY);

@@ -3,7 +3,7 @@ SHELL=bash
 
 READMES=genome-size/README.md genome-assembly/README.md transcript-assembly/README.md repeat-masking/README.md \
 	transcript-alignment/README.md protein-alignment/README.md genome-annotation/README.md \
-	interval-loci/README.md
+	interval-loci/README.md novel-genes/README.md
 
 pdom-docs.pdf:	README.md $(READMES)
 		which pandoc
