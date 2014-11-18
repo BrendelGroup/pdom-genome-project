@@ -1,0 +1,23 @@
+Any combinations of nine items (see below) can be used to
+select the query sequences which meet the criteria set
+forth by the logical operators and their set values.
+
+Logical operators are one of >, >=, <, <= and <>, where
+<> means the operator with the associated item has no
+effect on query sequence selection.
+
+You can select your desired query sequences by editing
+the operator and its values in the table below.
+ 
+
+no.  Description            Item       Operation    Value
+---------------------------------------------------------
+1.   Query_Length           QLen       <>             600
+2.   HSP_Length             HLen       <>             100
+3.   Subject_Length         SLen       <>             200
+4.   Subject_Coverage(%)    CovS       >=            90.0
+5.   Query_Coverage(%)      CovQ       >=            90.0
+6.   HSP_Percent_Identity   Pid        <>            60.0
+7.   Number_of_Indels       NGap       <>              20 
+8.   Alignment_Score        Score      <>           200.0
+9.   Expected_Value         Eval       <            1e-20
