@@ -9,7 +9,7 @@ pdom-loci-r1.2-pot-trgs.txt:		pdom-r1.2-no-anm-hits-iloci.txt pdom-tsa-aligned-u
 					comm -12 $^ > $@
 
 pdom-r1.2-no-anm-hits-iloci.txt:	pdom-r1.2-no-anm-hits.ids pdom-loci-r1.2-mrnamap.txt
-					selex --out=1 $^ | sort | uniq > $@
+					./selex --out=1 $^ | sort | uniq > $@
 
 pdom-r1.2-no-anm-hits.ids:		
 					iget $(PdomData)/r1.2/genome-annotation/$@
