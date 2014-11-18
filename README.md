@@ -1,48 +1,26 @@
----
-title:  '*Polistes dominula* genome project'
-author:
-- Daniel Standage
-- Volker Brendel
-- Amy Toth
-date: November 13, 2014
----
+# *Polistes dominula* genome project
 
-# Overview
+Daniel Standage  
+Volker Brendel  
+Amy Toth, PI
 
-This documentation is a record of our work for the *Polistes dominula* genome project.
-It was created to 1) serve as full disclosure of all of the methods, commands, and software used to produce the reported results, and 2) facilitate anonymous replication of those results.
+As contributors to this project we are committed to open and reproducible research.
+The main challenge for documenting our work is how to share the documentation and supplementary code in a way that is accessble both to readers with a conceptual focus (particularly reviewers) as well as readers with a technical focus (those interested in reproducing our work or adapting it for their system).
+This repository is our answer to that challenge.
 
-## Data access
+For each analysis (or group of related analyses) described in the paper, this repository contains a directory with the following.
 
-Raw instrument data and final data outputs are stored in the [iPlant Data Store][] under the path `/iplant/home/standage/Polistes_dominula/`.
-All file and directory paths provided in this documentation are relative to that root path, which for the remainder of the documentation will be designated the **Pdom Data Store**.
+  - A `README.md` markdown file contains a prose description of te analysis, along with the commands someone would type into the terminal to reproduce the analysis.
+  - A `Makefile` or batch script that enables someone to reproduce the entire analysis with a single command.
+  - Any relevant scripts or configuration files.
 
-## Using this documentation
+The README files can be concatenated and rendered as a single PDF file with [Pandoc](http://johnmacfarlane.net/pandoc/).
+They can also be viewed individually on the web at [GitHub](https://github.com/BrendelGroup/pdom-genome-project).
+Anyone wanting access to the scripts and Makefiles can simply (and anonymously) clone the repository with git or download an archive file containing all of the repository's contents.
 
-This project is divided into several sections, with each section focusing on a single analysis or small group of related analyses.
-Each section has a dedicated directory containing code and documentation specific to that section.
-These resources can be browsed or downloaded at [GitHub][].
+---------
 
-  - A `README.md` file (in Markdown format) is included for each section, which provides a prose description of what each set of commands is doing.
-    This file is intended to facilitate interactive replication of results: typing or pasting the commands into the terminal and executing them manually to produce the output.
-    (Note: a single PDF document containing all documentation was produced by concatenating all of the various README files into a single Markdown file and converting to PDF format.)
-  - Each section also contains a `Makefile` file which includes the same commands as the README file, though without the commentary and in slightly different syntax.
-    The purpose of these files is to facilitate automated replication of each analysis in batch mode.
-    To execute this procedure for a particular analysis, simply change to that directory and execute `make` on the command line.
-  - Most sections also include additional supplementary files, such as source code, graphics, or configuration files necessary for replicating the results.
-    The purpose of each supplemental file should be clear from the documentation.
-
-If you encounter any problems using this documentation or its associated files, please open a ticket with the [Pdom Genome Project issue tracker][].
-
-## Authors
-
-  - [Daniel Standage][]; Indiana University
-  - [Volker Brendel][]; Indiana University
-  - [Amy Toth], principal investigator; Iowa State University
-
-[Daniel Standage]: http://standage.github.io/
-[Volker Brendel]: http://brendelgroup.org/
-[Amy Toth]: http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html
-[iPlant Data Store]: http://www.iplantcollaborative.org/ci/data-store
-[GitHub]: https://github.com/BrendelGroup/pdom-genome-project
-[Pdom Genome Project issue tracker]: https://github.com/BrendelGroup/pdom-genome-project/issues
+**Disclaimer**: Although we have made every effort to ensure the docs are correct, it's possible errors remain.
+Some of the Makefiles were created *post hoc* from lab notebook entries, so there may be typos, or copy/paste errors; sometimes a dependency or technical prerequisite (i.e. *make sure program X is in your path*) may be accidentally ommitted.
+That being said, we don't expect any of these issues to be substantial.
+If you run into any issues reading or using the documentation or supplementary code, please feel free to open up a ticket in the [Pdom Genome Project issue tracker](https://github.com/BrendelGroup/pdom-genome-project/issues).
