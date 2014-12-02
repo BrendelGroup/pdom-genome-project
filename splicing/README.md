@@ -162,7 +162,7 @@ gunzip protein.fa.gz
 mv protein.fa amel-ncbi-prot.fa
 makeblastdb -in amel-ncbi-prot.fa -dbytype prot -parse_seqids
 blastp -db amel-ncbi-prot.fa -query pdom-annot-r1.2-ce-isoforms.fa \
-       -evalue 1e-6 -num_threads 32 -out pdom-vs-amel.blastp
+       -evalue 1e-6 -num_threads $NumThreads -out pdom-vs-amel.blastp
 
 MuSeqBox -i pdom-vs-amel.blastp -n 1 -s 1 -l 25 -d 4 -L 128 -c ce-crtfile \
     > pdom-vs-amel-blastp.msb
