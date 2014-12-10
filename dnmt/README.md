@@ -2,22 +2,25 @@
 
 ## Selecting probes
 
-Repeated the following steps for Dnmt1, Dnmt2, and Dnmt3
+Repeated the following steps for Dnmt1, Dnmt2, and Dnmt3, and MDB (methyl-DNA binding domain) proteins.
 
 - Search OrthoDB for dnmt\* (example: [`dnmt1`](http://orthodb.org/orthodb7/results?tree=Arth&searchtext=dnmt1&level=Arthropoda&swaptree=))
-- Retrieve GB number for longest *dnmt\** gene in *A. mellifera*: GB48403; retrieve sequence from [amel_OGSv3.2_pep.fa.gz](http://hymenopteragenome.org/beebase/?q=download_sequences)
+- Retrieve GB number for longest *dnmt*\* gene in *A. mellifera*: GB48403; retrieve sequence from [amel_OGSv3.2_pep.fa.gz](http://hymenopteragenome.org/beebase/?q=download_sequences)
   - Dnmt1: GB48403
   - Dnmt2: GB54141
   - Dnmt3: GB55485
+  - MBD: GB41522
 - Do BLASTP search at NCBI: *A. mellifera* protein vs Hymenoptera entries in NR
 - Retrieve proteins from as many species as possible where length and sequence are similar
   - see [dnmt1-hym.faa](dnmt1-hym.faa)
   - see [dnmt2-hym.faa](dnmt2-hym.faa)
   - see [dnmt3-hym.faa](dnmt3-hym.faa)
+  - see [mbd-hym.faa](mdb-hym.faa)
 - Go back to OrthoDB, select the "Vertebrate" tab, find the link for the Dnmt\* gene in *Mus musculus*; download from Ensembl, create a new file with mouse as outgroup
   - see [dnmt1-vert.faa](dnmt1-vert.faa)
   - see [dnmt2-vert.faa](dnmt2-vert.faa)
   - see [dnmt3-vert.faa](dnmt3-vert.faa)
+  - see [mbd-vert.faa](mbd-vert.faa)
 
 ### Note
 
@@ -46,10 +49,12 @@ See the following alignment files.
   - [dnmt1-hym.clu](dnmt1-hym.clu)
   - [dnmt2-hym.clu](dnmt2-hym.clu)
   - [dnmt3-hym.clu](dnmt3-hym.clu)
+  - [mbd-hym.clu](mbd-hym.clu)
 - Hymenoptera plus vertebrate outgroup
   - [dnmt1-vert.clu](dnmt1-vert.clu)
   - [dnmt2-vert.clu](dnmt2-vert.clu)
   - [dnmt3-vert.clu](dnmt3-vert.clu)
+  - [mbd-vert.clu](mbd-vert.clu)
 
 ## Next step: re-annotation
 

@@ -1,4 +1,5 @@
-ALNS=dnmt1-hym.clu dnmt2-hym.clu dnmt3-hym.clu dnmt1-vert.clu dnmt2-vert.clu dnmt3-vert.clu
+ALNS=dnmt1-hym.clu dnmt2-hym.clu dnmt3-hym.clu mbd-hym.clu dnmt1-vert.clu \
+     dnmt2-vert.clu dnmt3-vert.clu mbd-vert.clu
 
 all:		$(ALNS)
 
