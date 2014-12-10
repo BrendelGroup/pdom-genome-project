@@ -36,9 +36,11 @@ Used CLUSTAL to align each set of DNMTs and get a preliminary assessment their c
 clustalo --in dnmt1-hym.faa --outfmt clu --wrap 100 > dnmt1-hym.clu
 clustalo --in dnmt2-hym.faa --outfmt clu --wrap 100 > dnmt2-hym.clu
 clustalo --in dnmt3-hym.faa --outfmt clu --wrap 100 > dnmt3-hym.clu
+clustalo --in mbd-hym.faa --outfmt clu --wrap 100 > mdb-hym.clu
 clustalo --in dnmt1-vert.faa --outfmt clu --wrap 100 > dnmt1-vert.clu
 clustalo --in dnmt2-vert.faa --outfmt clu --wrap 100 > dnmt2-vert.clu
 clustalo --in dnmt3-vert.faa --outfmt clu --wrap 100 > dnmt3-vert.clu
+clustalo --in mbd-vert.faa --outfmt clu --wrap 100 > mbd-vert.clu
 ```
 
 Or just run `make`.
