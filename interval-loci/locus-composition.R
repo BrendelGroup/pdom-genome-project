@@ -18,6 +18,8 @@ pdom <- data.sub[substr(data.sub$ID, 1, 4) == "Pdom",]
 amel <- data.sub[substr(data.sub$ID, 1, 4) == "Amel",]
 pdom.h <- hist(pdom$GCcontent, breaks=25, plot=FALSE)
 amel.h <- hist(amel$GCcontent, breaks=25, plot=FALSE)
+cat(sprintf("Pdom median: %.1f\n", median(pdom$GCcontent)*100))
+cat(sprintf("Amel median: %.1f\n", median(amel$GCcontent)*100))
 png("amel-pdom-iloci-gc.png", height=1000, width=1000, res=150)
 plot(pdom.h$mids, pdom.h$counts, type="l", xlab="%GC content", ylab="Frequency", xlim=c(0,0.65))
 lines(amel.h$mids, amel.h$counts, col="orange")
