@@ -10,13 +10,14 @@ Repeated the following steps for Dnmt1, Dnmt2, and Dnmt3, MDB (methyl-DNA bindin
   - Dnmt2: GB54141
   - Dnmt3: GB55485
   - MBD: GB41522
-  - TET2: gi|571563963|ref|XP_006561260.1 (could not find in OrthoDB; found with NCBI keyword search
+  - TET2: gi|571563963|ref|XP_006561260.1 (could not find in OrthoDB; found with NCBI keyword search)
 - Do BLASTP search at NCBI: *A. mellifera* protein vs Hymenoptera entries in NR
 - Retrieve proteins from as many species as possible where length and sequence are similar
   - see [dnmt1-hym.faa](dnmt1-hym.faa)
   - see [dnmt2-hym.faa](dnmt2-hym.faa)
   - see [dnmt3-hym.faa](dnmt3-hym.faa)
   - see [mbd-hym.faa](mdb-hym.faa)
+  - see [tet2-hym.faa](tet2-hym.faa)
 - Do BLASTP search at PdomGDB to retrieve *P. dominula* homolog
 - Go back to OrthoDB, select the "Vertebrate" tab, find the link for the homologous gene in *Mus musculus*; download from Ensembl, create a new file with mouse as outgroup
   - see [dnmt1-vert.faa](dnmt1-vert.faa)
