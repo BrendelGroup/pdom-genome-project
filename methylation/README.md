@@ -1,11 +1,11 @@
-# Analysis of DNA methyltransferases
+# Analysis of DNA methyltransferases and methylation-related genes
 
 ## Selecting probes
 
 Repeated the following steps for Dnmt1, Dnmt2, and Dnmt3, MDB (methyl-DNA binding domain), and TET2 (methylcytosine dioxygenase) proteins.
 
-- Search OrthoDB for dnmt\* (example: [`dnmt1`](http://orthodb.org/orthodb7/results?tree=Arth&searchtext=dnmt1&level=Arthropoda&swaptree=))
-- Retrieve GB number for longest *dnmt*\* gene in *A. mellifera*: GB48403; retrieve sequence from [amel_OGSv3.2_pep.fa.gz](http://hymenopteragenome.org/beebase/?q=download_sequences)
+- Search OrthoDB for the gene by name (example: [`dnmt1`](http://orthodb.org/orthodb7/results?tree=Arth&searchtext=dnmt1&level=Arthropoda&swaptree=))
+- Retrieve GB number for longest gene in *A. mellifera*: GB48403; retrieve sequence from [amel_OGSv3.2_pep.fa.gz](http://hymenopteragenome.org/beebase/?q=download_sequences)
   - Dnmt1: GB48403
   - Dnmt2: GB54141
   - Dnmt3: GB55485
@@ -18,7 +18,7 @@ Repeated the following steps for Dnmt1, Dnmt2, and Dnmt3, MDB (methyl-DNA bindin
   - see [dnmt3-hym.faa](dnmt3-hym.faa)
   - see [mbd-hym.faa](mdb-hym.faa)
 - Do BLASTP search at PdomGDB to retrieve *P. dominula* homolog
-- Go back to OrthoDB, select the "Vertebrate" tab, find the link for the Dnmt\* gene in *Mus musculus*; download from Ensembl, create a new file with mouse as outgroup
+- Go back to OrthoDB, select the "Vertebrate" tab, find the link for the homologous gene in *Mus musculus*; download from Ensembl, create a new file with mouse as outgroup
   - see [dnmt1-vert.faa](dnmt1-vert.faa)
   - see [dnmt2-vert.faa](dnmt2-vert.faa)
   - see [dnmt3-vert.faa](dnmt3-vert.faa)
@@ -35,7 +35,7 @@ Repeated the following steps for Dnmt1, Dnmt2, and Dnmt3, MDB (methyl-DNA bindin
 
 ## Preliminary assessment of conservation
 
-Used CLUSTAL to align each set of DNMTs and get a preliminary assessment their conservation.
+Used CLUSTAL to align each set of proteins and get a preliminary assessment their conservation.
 
 ```bash
 clustalo --in dnmt1-hym.faa --outfmt clu --wrap 100 > dnmt1-hym.clu
