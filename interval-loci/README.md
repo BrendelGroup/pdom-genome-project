@@ -46,7 +46,7 @@ perl glb2lcl.pl < pdom-loci-r1.2.gff3 \
 
 ### Comparison of genome composition
 
-At the level of large genomic sequences (pseudo-chromosomes), *P. dominula* has the most AT-rich genome observed in Hymenoptera.
+At the level of large genomic sequences (> 1Mbp), *P. dominula* has the most AT-rich genome observed in Hymenoptera.
 For comparative evaluation of genome composition at the level of gene loci, we collected data for 13 Hymenopteran species: see ``hymenoptera-ilocus-stats-2014.tsv``.
 We applied several filters to the data, selecting loci within the 10% and 90% quantiles in length, containing no more than a single gene and no more than 25% ambiguous nucleotides.
 We then compared the nucleotide composition of *P. dominula* to that of *Apis mellifera*, noting that the trend is reversed at the resolution of individual genes.
@@ -78,7 +78,7 @@ abline(v=median(amel$GCcontent), lty=3, col="orange")
 d <- dev.off()
 ```
 
-![Composition of gene loci, *Apis mellifera* in orange, *Polistes dominula* in black.](amel-pdom-iloci-gc.png)
+![Composition of gene loci, *Apis mellifera* in orange, *Polistes dominula* in black.](amel-pdom-iloci-gc.*png*)
 
 ## Procedure (automated)
 

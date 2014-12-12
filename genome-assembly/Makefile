@@ -22,7 +22,10 @@ AllFastqs=$(DataDir)/pdom-gdnaseq-200bp-trim-1.fq \
           $(DataDir)/pdom-gdnaseq-3kb-trim-1.fq \
           $(DataDir)/pdom-gdnaseq-8kb-trim-1.fq
 
-all:						pdom-scaffolds-unmasked-r1.2.fa.gz $(RawFastqs)
+all:						pdom-scaffolds-unmasked-r1.2.fa.gz $(RawFastqs) hym-gc-dists.png
+
+hym-gc-dists.png:				amel.seq.dstbn.csv hsal.seq.dstbn.csv nvit.seq.dstbn.csv bter.seq.dstbn.csv mrot.seq.dstbn.csv pdom.seq.dstbn.csv
+						./genome-composition.R
 
 pdom-scaffolds-unmasked-r1.2.fa.gz:		AssemblyComplete scaff-ids.pl
 						./scaff-ids.pl PdomSCFr1.2- \
