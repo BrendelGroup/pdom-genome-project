@@ -78,7 +78,7 @@ abline(v=median(amel$GCcontent), lty=3, col="orange")
 d <- dev.off()
 ```
 
-![Composition of gene loci, *Apis mellifera* in orange, *Polistes dominula* in black.](amel-pdom-iloci-gc.*png*)
+![Composition of gene loci, *Apis mellifera* in orange, *Polistes dominula* in black.](amel-pdom-iloci-gc.png)
 
 ## Procedure (automated)
 
