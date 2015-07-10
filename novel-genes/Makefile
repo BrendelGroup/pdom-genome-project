@@ -25,17 +25,18 @@ pdom-tsa-aligned-unmatched-loci.txt:	pdom-loci-r1.2.gff3 pdom-tsa-aligned-unmatc
 pdom-loci-r1.2.gff3:		
 					iget $(PdomData)/r1.2/interval-loci/$@
 
-pdom-tsa-aligned-unmatched.gff3:	pdom-tsa-r1.2-unmatched-pep.txt pdom-tsa-masked-filtered.gff3
+pdom-tsa-aligned-unmatched.gff3:	pdom-tsa-r1.2-unmatched-pep.txt pdom-tsa-masked.gff3
 					python align-keep.py $^ > $@
 
-pdom-tsa-masked-filtered.gff3:	
-				iget $(PdomData)/r1.2/transcript-alignment/$@
+pdom-tsa-masked.gff3:			
+					iget $(PdomData)/r1.2/transcript-alignment/$@
 
-pdom-tsa-r1.2.fa:		
-				iget $(PdomData)/r1.2/transcript-assembly/$@.gz
-				gunzip $@.gz
+pdom-tsa-r1.2.fa:			
+					iget $(PdomData)/r1.2/transcript-assembly/$@.gz
+					gunzip $@.gz
 
 pdom-tsa-r1.2-unmatched-pep.txt:	
 					iget $(PdomData)/r1.2/transcript-assembly/$@
+
 clean:				
 				rm -f pdom-loci-r1.2*.txt pdom-tsa*.txt pdom-tsa*.gff3 pdom-r1.2-no-anm-hits* pdom-loci-r1.2.fa pdom-loci-r1.2.gff3 pdom-tsa-r1.2.fa
