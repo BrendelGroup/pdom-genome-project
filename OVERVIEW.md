@@ -1,34 +1,34 @@
 ---
-title:  '*Polistes dominula* genome project'
+title:  '*Polistes dominula* genome project lab notebook'
 author:
 - Daniel Standage
 - Volker Brendel
 - Amy Toth
-date: November 13, 2014
+date: July 25, 2015
 ---
 
 # Overview
 
-This documentation is a record of our work for the *Polistes dominula* genome project.
+This lab notebook contains a record of our work for the *Polistes dominula* genome project.
 It was created to 1) serve as full disclosure of all of the methods, commands, and software used to produce the reported results, and 2) facilitate anonymous replication of those results.
 
 ## Data access
 
-Raw instrument data and final data outputs are stored in the [iPlant Data Store][] under the path `/iplant/home/standage/Polistes_dominula/`.
+Raw instrument data have been uploaded to the NCBI Sequence Read Archive, and final data outputs are stored in the [iPlant Data Store] under the path `/iplant/home/standage/Polistes_dominula/`.
 All file and directory paths provided in this documentation are relative to that root path, which for the remainder of the documentation will be designated the **Pdom Data Store**.
 
 ## Using this documentation
 
 This project is divided into several sections, with each section focusing on a single analysis or small group of related analyses.
 Each section has a dedicated directory containing code and documentation specific to that section.
-These resources can be browsed or downloaded at [GitHub][].
+These resources can be browsed or downloaded at [GitHub].
 
-If you encounter any problems using this documentation or its associated files, please open a ticket with the [Pdom Genome Project issue tracker][].
+If you encounter any problems using this documentation or its associated files, please open a ticket with the [Pdom Genome Project issue tracker].
 
 ## Authors
 
-  - [Daniel Standage][]; Indiana University
-  - [Volker Brendel][]; Indiana University
+  - [Daniel Standage]; Indiana University
+  - [Volker Brendel]; Indiana University
   - [Amy Toth], principal investigator; Iowa State University
 
 [Daniel Standage]: http://standage.github.io/

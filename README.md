@@ -1,12 +1,27 @@
-# *Polistes dominula* genome project
+# *Polistes dominula* genome project lab notebook
 
 Daniel Standage  
 Volker Brendel  
 Amy Toth, PI
 
-As contributors to this project we are committed to open and reproducible research.
-The main challenge for documenting our work is how to share the documentation and supplementary code in a way that is accessble both to readers with a conceptual focus (particularly reviewers) as well as readers with a technical focus (those interested in reproducing our work or adapting it for their system).
-This repository is our answer to that challenge.
+## Overview
+
+This repository is the electronic lab notebook for the *Polistes dominula* genome project.
+The intellectual thrust of the work and its various findings are discussed in *[insert citation here]*.
+And although our methods are described in detail in the supplementary **Materials and Methods** section, there are many technical details required to replicate the work (such as configuration files, UNIX commands, and source code) that are not easily communicated in the format of a scientific paper.
+This notebook is a complement to the paper and is intended to provide those technical details.
+
+## Disclaimer
+
+Ideally, the code and commands provided in this lab notebook should simply work out-of-the-box on any UNIX system.
+Practically, though, the vast majority of the analysis was done on machines running the Fedora and Mac OS X operating systems.
+Getting the code to run on other systems may require minor adaptations.
+
+Also, although we have made every effort to ensure the lab notebook content is accurate, it's possible errors remain.
+Some of the content was created *post hoc* from personal notes, so there may be minor typos, copy/paste errors, or occasional omitted dependency or technical prerequisite statements (such as *make sure program X is in your path*).
+If you run into any issues reading or using the documentation or supplementary code, we'd be happy to help if you open up a ticket in the [lab notebook's issue tracker](https://github.com/BrendelGroup/pdom-genome-project/issues).
+
+## Organization
 
 For each analysis (or group of related analyses) described in the paper, this repository contains a directory with the following.
 
@@ -17,10 +32,3 @@ For each analysis (or group of related analyses) described in the paper, this re
 The README files can be concatenated and rendered as a single PDF file with [Pandoc](http://johnmacfarlane.net/pandoc/).
 They can also be viewed individually on the web at [GitHub](https://github.com/BrendelGroup/pdom-genome-project).
 Anyone wanting access to the scripts and Makefiles can simply (and anonymously) clone the repository with git or download an archive file containing all of the repository's contents.
-
----------
-
-**Disclaimer**: Although we have made every effort to ensure the docs are correct, it's possible errors remain.
-Some of the Makefiles were created *post hoc* from lab notebook entries, so there may be typos, or copy/paste errors; sometimes a dependency or technical prerequisite (i.e. *make sure program X is in your path*) may be accidentally ommitted.
-That being said, we don't expect any of these issues to be substantial.
-If you run into any issues reading or using the documentation or supplementary code, please feel free to open up a ticket in the [Pdom Genome Project issue tracker](https://github.com/BrendelGroup/pdom-genome-project/issues).
