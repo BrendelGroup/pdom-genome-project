@@ -50,7 +50,7 @@ Finally, estimate *k*-mer coverage, genome coverage, and genome size.
 Clean up huge data files.
 
 ```bash
-rm *.fastq *.fq *.jf
+rm *.sra *.fastq *.fq *.jf
 ```
 
 ## Procedure (automated)
@@ -61,7 +61,7 @@ The same procedure can also be run in batch mode using the following commands (i
 ../GetGenomeSRA.make -j 16
 make NumThreads=16
 make clean
-rm *.fastq *.fq
+rm *.sra *.fastq *.fq
 ```
 
 ## References

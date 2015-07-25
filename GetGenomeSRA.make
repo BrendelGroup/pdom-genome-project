@@ -4,6 +4,8 @@
 SHELL := bash
 SRAURL=ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR
 
+.SECONDARY:
+
 all: pdom-gdnaseq-200bp-1.fq pdom-gdnaseq-200bp-2.fq \
      pdom-gdnaseq-500bp-1.fq pdom-gdnaseq-500bp-2.fq \
      pdom-gdnaseq-1kb-1.fq   pdom-gdnaseq-1kb-2.fq   \
@@ -33,6 +35,7 @@ pdom-gdnaseq-8kb-2.fq: SRR1409972.fastq
 
 %.fastq: %.sra
 	@ echo [Convert accession $* from .sra to .fastq]
+	@ which fastq-dump > /dev/null
 	@ fastq-dump $<
 
 %.sra:
